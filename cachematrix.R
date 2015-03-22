@@ -42,9 +42,6 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(matrix, ...) {
         ## Return a matrix that is the inverse of 'matrix'
 
-        # In this function environment, we will use "local_inverse_matrix" variable to 
-        # store the matrix we will work with. 
-
         # Initially, we will get its inverse value with "getinverse" function.
         in_matrix <- matrix$getinverse()
      
@@ -56,7 +53,7 @@ cacheSolve <- function(matrix, ...) {
         # If it is NULL, then it's empty, so we need to calculate the inverse matrix, and will do it as follows:
         # 
         # We use the built-in "solve" function to calculate the inverse matrix.
-        # Firtly we get the matrix, we pass it to solve function to calculate its inverse, and we pass the result
+        # Firstly we get the matrix, we pass it to solve function to calculate its inverse, and we pass the result
         # of this calculation to setinverse function to set this inverse as the new cached inversed matrix.
         else {
         	in_matrix <- matrix$setinverse(solve(matrix$get()))
